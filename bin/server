@@ -1,0 +1,10 @@
+#!/bin/bash -i
+
+# remove pid file
+if [ -f tmp/pids/server.pid ]; then
+  rm tmp/pids/server.pid
+fi
+
+bundle install
+yarn install
+bundle exec foreman start -f Procfile.dev
